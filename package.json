@@ -1,0 +1,49 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "node-sass --output-style compressed -o dist src/sass && postcss -u autoprefixer -r dist/*.css",
+    "build:index": "cp src/index.html dist",
+    "ci:prod:js": "webpack --mode=production",
+    "ci:dev:js": "webpack --mode=development",
+    "build:html": "posthtml -c posthtml.json",
+    "ci:loc": "run-p build:* ci:dev:js",
+    "ci:prod": "run-p build:* ci:prod:js",
+    "start": "browser-sync start --server 'dist' --files 'dist'",
+    "watch": "run-p watch:* start",
+    "watch:css": "onchange 'src/sass' -- npm run build:css",
+    "watch:index": "onchange 'src/index.html' -- npm run build:index",
+    "watch:js": "onchange 'src/js' -- npm run ci:dev:js",
+    "watch:html": "onchange 'src/views' -- npm run build:html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coffeebe4code/site.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coffeebe4code/site/issues"
+  },
+  "homepage": "https://github.com/coffeebe4code/site#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.19.3",
+    "autoprefixer": "^10.4.12",
+    "babel-loader": "^8.2.5",
+    "browser-sync": "^2.27.10",
+    "eslint": "^8.24.0",
+    "eslint-webpack-plugin": "^3.2.0",
+    "htmlnano": "^2.0.2",
+    "node-sass": "^7.0.3",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "postcss-cli": "^10.0.0",
+    "posthtml": "^0.16.6",
+    "posthtml-cli": "^0.10.0",
+    "posthtml-modules": "^0.9.0",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
+}
