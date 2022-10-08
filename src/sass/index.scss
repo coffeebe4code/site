@@ -8,34 +8,24 @@ html, body {
   min-height: 100vh;
 }
 
+header {
+  background-color: $colorWhite;
+
+}
+
 body {
   display: grid;
   font-family: $fontFamily;
-  grid-template-areas: "head head head" "main main main" "foot foot foot";
-  grid-template-rows: 80px 3fr 1fr;
-  grid-template-columns: repeat(3, 1fr);
 }
 
 div {
   display: flex;
 }
 
-header {
-  padding: .5rem;
-  grid-area: head;
-  grid-template-columns: repeat(3, 1fr);
+span {
+
 }
 
-main {
-  padding: .5em;
-  grid-area: main;
-  background-color: $colorPrimary;
+section {
 
-  }
-
-footer {
-  padding: .5rem;
-  grid-area: foot;
-  background-color: $colorSecondary;
-
-} 
+}
