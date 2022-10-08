@@ -1,26 +1,41 @@
 @import 'variables.scss';
 
+html, body {
+  background-color: $colorSoften;
+  margin: 0px;
+  padding: 0px;
+  max-width: 100vw;
+  min-height: 100vh;
+}
+
 body {
-  color: $colorPrimary;
+  display: grid;
+  font-family: $fontFamily;
+  grid-template-areas: "head head head" "main main main" "foot foot foot";
+  grid-template-rows: 80px 3fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 div {
-  width: 100%;
-  height: 10px;
+  display: flex;
 }
 
-.one {
+header {
+  padding: .5rem;
+  grid-area: head;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+main {
+  padding: .5em;
+  grid-area: main;
   background-color: $colorPrimary;
-}
 
-.two {
+  }
+
+footer {
+  padding: .5rem;
+  grid-area: foot;
   background-color: $colorSecondary;
-}
 
-.three {
-  background-color: $colorTertiary;
-}
-
-.four {
-  background-color: $colorBackground;
-}
+} 

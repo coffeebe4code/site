@@ -7,14 +7,14 @@
     "build:css": "node-sass --output-style compressed -o dist src/sass && postcss -u autoprefixer -r dist/*.css",
     "build:prod:js": "webpack --mode=production",
     "build:dev:js": "webpack --mode=development",
-    "build:html": "posthtml -c posthtml.json",
-    "ci:loc": "run-p build:*",
-    "ci:prod": "run-p build:*",
+    "build:index": "mkdir -p dist && cp src/index.html dist/index.html",
+    "ci:loc": "run-p build:dev:js build:*",
+    "ci:prod": "run-p build:prod:js build:*",
     "start": "browser-sync start --no-notify --server 'dist' --files 'dist'",
     "watch": "run-p watch:* start",
     "watch:css": "onchange 'src/sass' -- npm run build:css",
     "watch:js": "onchange 'src/js' -- npm run build:dev:js",
-    "watch:html": "onchange 'src/views' -- npm run build:html"
+    "watch:html": "onchange 'src/index.html' -- npm run build:index"
   },
   "repository": {
     "type": "git",
@@ -32,18 +32,20 @@
     "babel-loader": "^8.2.5",
     "browser-sync": "^2.27.10",
     "eslint": "^8.24.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-webpack-plugin": "^3.2.0",
+    "html-webpack-plugin": "^5.5.0",
     "node-sass": "^7.0.3",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.1.0",
     "postcss-cli": "^10.0.0",
-    "posthtml": "^0.16.6",
-    "posthtml-cli": "^0.10.0",
-    "posthtml-modules": "^0.9.0",
+    "prettier": "^2.7.1",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
+    "@babel/runtime": "^7.19.0",
     "lit": "^2.3.1"
   }
 }

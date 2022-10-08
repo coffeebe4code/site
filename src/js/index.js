@@ -1,17 +1,20 @@
-import {LitElement, html} from 'lit';
+import { LitElement, html } from 'lit';
 
-class MyElement extends LitElement {
-
-  render(){
+class CButton extends LitElement {
+  static get properties() {
+    return { name: name };
+  }
+  constructor(name) {
+    super();
+    this.name = name;
+  }
+  render() {
     return html`
       <div>
-        <p>A paragraph</p>
+        <p>${this.name}</p>
       </div>
     `;
   }
 }
 
-customElements.define('my-element', MyElement);
-
-console.log('hello');
-
+customElements.define('c-button', CButton);
