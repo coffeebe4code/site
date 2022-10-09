@@ -10,7 +10,7 @@
   --colorInfo: #2f2440;
   --colorBackground: #e9eaec;
   --fontFamily: 'Monaco', sans-serif;
-  --fontMed: 1.2rem;
+  --fontMed: 1rem;
 }
 
 html,
@@ -20,7 +20,6 @@ body {
   padding: 0px;
   max-width: 100vw;
   min-height: 100vh;
-  font-weight: 400;
 }
 
 body {

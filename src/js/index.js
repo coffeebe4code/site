@@ -1,36 +1,44 @@
-import { LitElement, html, css, unsafeCss } from 'lit';
+import { LitElement, html, css } from 'lit';
 import '../css/index.css';
 
-class PButton extends LitElement {
+class CButton extends LitElement {
   static properties = {
-    name,
-    focus,
+    _name: {},
+    _class: {},
   };
   static styles = css`
     :host {
-      padding-left: 2px;
-      padding-right: 2px;
+      padding-left: 8px;
     }
+
+    .primary {
+      background-color: var(--colorPrimary);
+      color: white;
+    }
+
+    .tertiary {
+      background-color: var(--colorTertiary);
+    }
+
     button {
       border-radius: 3px;
-      font-weight: 400;
       border: 2px solid transparent;
       font-size: var(--fontMed);
-      background-color: var(${unsafeCss(this.focusVal)});
-      color: white;
       padding: 0.5rem;
     }
   `;
 
-  constructor(name, focus) {
+  constructor(_name, _class) {
     super();
-    this.name = name;
-    this.focus = focus;
+    this._name = _name;
+    this._class = _class;
   }
 
   render() {
-    return html`<button type="button">${this.name}</button>`;
+    return html`<button type="button" class=${this._class}>
+      ${this._name}
+    </button>`;
   }
 }
 
-customElements.define('p-button', PButton);
+customElements.define('c-button', CButton);
