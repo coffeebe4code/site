@@ -11,10 +11,15 @@
   },
   "parserOptions": {
     "ecmaVersion": 2018,
-    "sourceType": "module"
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "modules": true,
+      "legacyDecorators": true
+    }
   },
   "plugins": ["prettier"],
   "rules": {
+    "prettier/prettier": "error",
     "semi": ["error", "always"],
     "quotes": ["error", "single"]
   }

@@ -4,6 +4,7 @@
         "useBuiltIns": "usage",
         "corejs": "3",
         "targets": {
+            "node": "current",
             "browsers": [
                 "last 5 versions",
                 "ie >= 8"
@@ -11,5 +12,4 @@
         }
     }]
 ],
-"plugins": ["@babel/plugin-proposal-decorators", {"legacy": true }]
 }

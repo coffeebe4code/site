@@ -1,9 +1,25 @@
-import { LitElement, html, css, property } from 'lit';
+import { LitElement, html, css } from 'lit';
 
 class CButton extends LitElement {
-  @property() name = 'test';
+  static properties = {
+    name,
+  };
+  static styles = css`
+    button {
+      background: yellow;
+      border-radius: 0px;
+      color: white;
+      padding: 0.5rem;
+    }
+  `;
+
+  constructor(name) {
+    super();
+    this.name = name;
+  }
+
   render() {
-    return html` <button>${this.name}</button> `;
+    return html`<button type="button">${this.name}</button>`;
   }
 }
 
