@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:css": "postcss -u autoprefixer -r dist/*.css",
     "build:prod:js": "webpack --mode=production",
     "build:dev:js": "webpack --mode=development",
     "build:index": "mkdir -p dist && cp src/index.html dist/index.html",

@@ -1,21 +1,31 @@
-import { LitElement, html, css } from 'lit';
-import sheet from '../css/index.css';
+import { LitElement, html, css, unsafeCss } from 'lit';
+import '../css/index.css';
 
-class CButton extends LitElement {
+class PButton extends LitElement {
   static properties = {
     name,
+    focus,
   };
   static styles = css`
+    :host {
+      padding-left: 2px;
+      padding-right: 2px;
+    }
     button {
-      border-radius: 0px;
+      border-radius: 3px;
+      font-weight: 400;
+      border: 2px solid transparent;
+      font-size: var(--fontMed);
+      background-color: var(${unsafeCss(this.focusVal)});
       color: white;
       padding: 0.5rem;
     }
   `;
 
-  constructor(name) {
+  constructor(name, focus) {
     super();
     this.name = name;
+    this.focus = focus;
   }
 
   render() {
@@ -23,5 +33,4 @@ class CButton extends LitElement {
   }
 }
 
-document.adoptedStyleSheets = [sheet];
-customElements.define('c-button', CButton);
+customElements.define('p-button', PButton);
