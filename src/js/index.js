@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'lit';
+import sheet from '../css/index.css';
 
 class CButton extends LitElement {
   static properties = {
@@ -6,7 +7,6 @@ class CButton extends LitElement {
   };
   static styles = css`
     button {
-      background: yellow;
       border-radius: 0px;
       color: white;
       padding: 0.5rem;
@@ -23,4 +23,5 @@ class CButton extends LitElement {
   }
 }
 
+document.adoptedStyleSheets = [sheet];
 customElements.define('c-button', CButton);
