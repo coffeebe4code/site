@@ -9,19 +9,25 @@ class CButton extends LitElement {
   static styles = css`
     :host {
       padding-left: 8px;
+      padding-right: 4px;
     }
-
     .primary {
       background-color: var(--colorPrimary);
       color: white;
     }
-
     .tertiary {
       background-color: var(--colorTertiary);
     }
-
+    .primary:hover {
+      background-color: var(--colorPrimaryLighter);
+    }
+    .tertiary:hover {
+      background-color: var(--colorTertiaryDarker);
+    }
     button {
-      border-radius: 3px;
+      cursor: pointer;
+      min-width: 80px;
+      border-radius: 4px;
       border: 2px solid transparent;
       font-size: var(--fontMed);
       padding: 0.5rem;

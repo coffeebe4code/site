@@ -1,9 +1,11 @@
 :root {
   --colorPrimary: #8b1ae5;
+  --colorPrimaryLighter: #b46bee;
   --colorSoften: #d3e0e9;
   --colorWhite: #fcfcfc;
   --colorSecondary: #e7d2cc;
-  --colorTertiary: #868b8e;
+  --colorTertiary: #e4e6e7;
+  --colorTertiaryDarker: #c3c8ca;
   --colorContainer: #eeede7;
   --colorError: #ba0f30;
   --colorWarn: #d89c60;
@@ -30,10 +32,11 @@ body {
 }
 
 header {
-  display: flex;
+  display: grid;
   grid-area: head;
   background-color: var(--colorWhite);
-  justify-content: center;
+  grid-template-areas: 'left mid right';
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
 }
 
@@ -49,4 +52,5 @@ div {
 }
 
 section {
+  display: grid;
 }
